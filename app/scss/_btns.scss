@@ -1,0 +1,25 @@
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.5rem;
+  width: fit-content;
+  padding: 1.5rem 2.5rem;
+  background-color: #A88F6B;
+  color: #ededed;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 125%;
+  letter-spacing: -.02rem;
+  text-align: center;
+  transition: linear .2s;
+  border: 1px solid transparent;
+  &:hover{
+    transform: translate(-.2rem, -.2rem);
+  }
+  &--transparent{
+    border-color: #A88F6B;
+    color: #A88F6B;
+    background-color: transparent;
+  }
+}

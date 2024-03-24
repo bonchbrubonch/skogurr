@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'WorkSans';
+  src: local('WorkSans-Regular'), local('WorkSans-Regular'),
+    url('../fonts/WorkSans-Regular.woff2') format('woff2'),
+    url('../fonts/WorkSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: local('WorkSans-Medium'), local('WorkSans-Medium'),
+    url('../fonts/WorkSans-Medium.woff2') format('woff2'),
+    url('../fonts/WorkSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: local('WorkSans-Semibold'), local('WorkSans-Semibold'),
+    url('../fonts/WorkSans-Semibold.woff2') format('woff2'),
+    url('../fonts/WorkSans-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: local('WorkSans-Bold'), local('WorkSans-Bold'),
+    url('../fonts/WorkSans-Bold.woff2') format('woff2'),
+    url('../fonts/WorkSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: local('WorkSans-Black'), local('WorkSans-Black'),
+    url('../fonts/WorkSans-Black.woff2') format('woff2'),
+    url('../fonts/WorkSans-Black.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
