@@ -16,6 +16,15 @@ $(function () {
     $("body").removeClass("lock");
   });
 
+  $(".place__dot-btn").on("click", function () {
+    $(".place__dot").removeClass("active");
+    $(this).parent().addClass("active");
+  });
+
+  $(".place__item-close").on("click", function () {
+    $(".place__dot").removeClass("active");
+  });
+
 });
 
 //header
