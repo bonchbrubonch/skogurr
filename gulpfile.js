@@ -4,7 +4,7 @@ const concat        = require('gulp-concat');
 const uglify        = require('gulp-uglify-es').default;
 const sass          = require('gulp-sass');
 const autoprefixer  = require('gulp-autoprefixer');
-const cleancss      = require('gulp-clean-css');
+// const cleancss      = require('gulp-clean-css');
 const imagemin      = require('gulp-imagemin');
 const newer         = require('gulp-newer');
 const del           = require('del');
@@ -39,7 +39,7 @@ function styles() {
     }))
   .pipe(concat('app.min.css'))
   .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-  .pipe(cleancss(( {lvel: {1: {specailComents: 0} } } )))
+  // .pipe(cleancss(( {lvel: {1: {specailComents: 0} } } )))
   .pipe(dest('app/css/'))
   .pipe(browserSync.stream())
 }

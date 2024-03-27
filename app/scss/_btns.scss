@@ -21,5 +21,9 @@
     border-color: #A88F6B;
     color: #A88F6B;
     background-color: transparent;
+    &:hover{
+      background-color: #A88F6B;;
+      color: #fff;
+    }
   }
 }

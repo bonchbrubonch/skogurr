@@ -15,6 +15,8 @@
     height: 9rem;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: linear .3s;
   }
 
   &__logo {
@@ -39,12 +41,22 @@
     text-transform: lowercase;
 
     a {
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      transition: linear .2s;
+      position: relative;
 
-      &:hover {
-        text-decoration-color: #ededed;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.4rem;
+        left: 0;
+        width: 0%;
+        height: 0.2rem;
+        background-color: #ededed;
+        transition: linear .2s;
+      }
+      &:hover{
+        &::after{
+          width: 100%;
+        }
       }
     }
 
@@ -65,9 +77,22 @@
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: linear .2s;
+    position: relative;
 
-    &:hover {
-      text-decoration-color: #ededed;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.4rem;
+      left: 0;
+      width: 0%;
+      height: 0.2rem;
+      background-color: #ededed;
+      transition: linear .2s;
+    }
+    &:hover{
+      &::after{
+        width: 100%;
+      }
     }
   }
 
@@ -84,9 +109,22 @@
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: linear .2s;
+    position: relative;
 
-    &:hover {
-      text-decoration-color: #ededed;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.4rem;
+      left: 0;
+      width: 0%;
+      height: 0.2rem;
+      background-color: #ededed;
+      transition: linear .2s;
+    }
+    &:hover{
+      &::after{
+        width: 100%;
+      }
     }
   }
 }
@@ -100,6 +138,7 @@
 /*start menu============*/
 .menu.active {
   transform: translateX(0);
+  opacity: 1;
 }
 
 .menu {
@@ -114,7 +153,8 @@
   width: 100%;
   z-index: 9999;
   transform: translateX(100%);
-  transition: transform .3s;
+  opacity: 0;
+  transition: all .8s;
   overflow: auto;
 
   .container {
@@ -131,18 +171,21 @@
     max-width: 90rem;
     width: 100%;
     margin: 0 0 0 -10px;
+    min-height: 100vh;
+    font-size: 0;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      background-position: top;
     }
   }
 
   &__right {
     display: flex;
     flex-direction: column;
-    padding: 3rem 3rem 3rem 5rem;
+    padding: 3rem 3rem 2rem 5rem;
     max-width: 1020px;
     width: 100%;
   }
@@ -152,7 +195,8 @@
     margin: 0 0 5rem 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: .1rem solid #e1e1e1;
+    align-items: center;
+    border-bottom: .2rem solid #D5D5D5;
   }
 
   &__logo {
@@ -172,7 +216,28 @@
     line-height: 2.4rem;
     letter-spacing: .02rem;
     text-decoration: underline;
+    text-decoration-color: transparent;
     cursor: pointer;
+    color: #8E8E8E;
+    transition: linear .3s;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.4rem;
+      left: 0;
+      width: 0%;
+      height: 0.2rem;
+      background-color: #171717;
+      transition: linear .2s;
+    }
+    &:hover{
+      color: #171717;
+      &::after{
+        width: 100%;
+      }
+    }
   }
 
   &__box {
@@ -225,6 +290,10 @@
         margin: 0 0 1.5rem 0;
       }
 
+      li:last-child {
+        margin: 0;
+      }
+
       a {
         color: #171717;
         font-size: 2.6rem;
@@ -246,10 +315,30 @@
   .header__lang {
     color: #171717;
     margin: 0;
+    a{
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.4rem;
+        left: 0;
+        width: 0%;
+        height: 0.2rem;
+        background-color: #171717;
+        transition: linear .2s;
+      }
+      &:hover{
+        color: #171717;
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+   
   }
 
   &__bottom-box {
-    max-width: 45rem;
+    max-width: 60rem;
     width: 100%;
     margin: 0 0 0 auto;
     display: flex;
@@ -420,7 +509,16 @@
 /*end about===========*/
 
 /*start place===========*/
+.about__box * {
+  transition: linear .5s;
+}
+
 .place {
+
+  &__swipe {
+    display: none;
+  }
+
   padding: 15rem 0;
   color: #171717;
 
@@ -542,6 +640,7 @@
     &--three {
       bottom: 42rem;
       left: -5rem;
+
       .place__item-box {
         bottom: 5rem;
       }
@@ -592,20 +691,24 @@
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -.02rem;
-    h5{
+
+    h5 {
       transition: linear .2s;
       text-align: center;
     }
   }
-  &__dot.active{
-    h5{
+
+  &__dot.active {
+    h5 {
       opacity: 0;
     }
   }
-  &__dot.active + .place__item-box{
+
+  &__dot.active+.place__item-box {
     opacity: 1;
     z-index: 11;
   }
+
   &__dot-btn {
     margin: 0 0 1.5rem 0;
     position: relative;
@@ -956,6 +1059,7 @@
 
     .btn {
       margin: 5rem 0 0 0;
+
     }
   }
 

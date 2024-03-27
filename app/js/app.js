@@ -25,17 +25,26 @@ $(function () {
     $(".place__dot").removeClass("active");
   });
 
+  if ($(window).width() <= 992) {
+    $(".place__dot-btn").on("click", function () {
+      $("body").addClass("lock");
+    });
+    $(".place__item-close").on("click", function () {
+      $("body").removeClass("lock");
+    });
+  }
+
 });
 
 //header
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   var header = document.querySelector('header');
   var headerOffset = header.offsetTop;
   var scrollPosition = window.scrollY || window.pageYOffset;
   if (scrollPosition > headerOffset + 100) {
-      header.classList.add('sticky');
+    header.classList.add('sticky');
   } else {
-      header.classList.remove('sticky');
+    header.classList.remove('sticky');
   }
 });
 
@@ -45,7 +54,7 @@ var swiper = new Swiper(".about__swiper", {
   centeredSlides: true,
   loop: true,
   autoplay: {
-    delay: 2500,
+    delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -60,7 +69,7 @@ var swiper = new Swiper(".events__swiper", {
   loop: true,
   effect: "fade",
   autoplay: {
-    delay: 2500,
+    delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
@@ -73,21 +82,21 @@ var swiper = new Swiper(".events__swiper", {
   },
 });
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   var darkSections = document.querySelectorAll('[data-theme="dark"]');
   var scrollPosition = window.scrollY;
 
-  darkSections.forEach(function(darkSection) {
-      var sectionTop = darkSection.getBoundingClientRect().top + window.scrollY;
-      var sectionBottom = sectionTop + darkSection.offsetHeight;
-      var triggerPositionTop = sectionTop - 200; // Початкова позиція тригера
-      var triggerPositionBottom = sectionBottom; // Кінцева позиція тригера
+  darkSections.forEach(function (darkSection) {
+    var sectionTop = darkSection.getBoundingClientRect().top + window.scrollY;
+    var sectionBottom = sectionTop + darkSection.offsetHeight;
+    var triggerPositionTop = sectionTop - 200; // Початкова позиція тригера
+    var triggerPositionBottom = sectionBottom; // Кінцева позиція тригера
 
-      if (scrollPosition >= triggerPositionTop && scrollPosition <= triggerPositionBottom) {
-          document.body.setAttribute('data-current-theme', 'dark');
-      } else {
-          document.body.removeAttribute('data-current-theme');
-      }
+    if (scrollPosition >= triggerPositionTop && scrollPosition <= triggerPositionBottom) {
+      document.body.setAttribute('data-current-theme', 'dark');
+    } else {
+      document.body.removeAttribute('data-current-theme');
+    }
   });
 });
 
