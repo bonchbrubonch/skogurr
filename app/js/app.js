@@ -25,7 +25,7 @@ $(function () {
     $(".place__dot").removeClass("active");
   });
 
-  if ($(window).width() <= 992) {
+  if ($(window).width() <= 1200) {
     $(".place__dot-btn").on("click", function () {
       $("body").addClass("lock");
     });
