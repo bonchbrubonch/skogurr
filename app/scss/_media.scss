@@ -22,16 +22,8 @@
     font-size: 1.8rem;
   }
 
-  .intro__inner {
-    min-height: 70rem;
-  }
-
   .header__inner {
     height: 4.5rem;
-  }
-
-  .intro__inner {
-    padding: 29rem 0 1rem;
   }
 
   .intro__bottom p {
@@ -357,10 +349,6 @@
     font-size: 2.6rem;
   }
 
-  .place__item-top span {
-    font-size: 1.6rem;
-  }
-
   .place__item-top {
     margin: 0 0 2rem 0;
   }
@@ -462,6 +450,10 @@
   .place__item--eight {
     bottom: 192px;
     left: 723px;
+  }
+  .place__item--nine {
+    bottom: 125px;
+    left: -18px;
   }
 
 

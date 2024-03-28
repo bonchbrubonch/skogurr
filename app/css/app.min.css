@@ -671,7 +671,7 @@ body[data-current-theme=dark] .header__inner {
 }
 
 .header__lang {
-  margin: 0 39rem 0 auto;
+  margin: 0 36rem 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -715,7 +715,7 @@ body[data-current-theme=dark] .header__inner {
 }
 
 .header__tel {
-  margin: 0 9rem 0 0;
+  margin: 0 17rem 0 0;
   color: #ededed;
   font-size: 2rem;
   font-weight: 500;
@@ -1079,8 +1079,9 @@ body[data-current-theme=dark] .header__inner {
 }
 
 .intro__inner {
-  padding: 24% 0 2.5rem;
-  min-height: 110rem;
+  position: relative;
+  padding: 8rem 0;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
   display: -webkit-box;
@@ -1120,6 +1121,8 @@ body[data-current-theme=dark] .header__inner {
 }
 
 .intro__bottom {
+  position: absolute;
+  bottom: 2.5rem;
   width: 100%;
   margin: auto 0 0 0;
   display: -webkit-box;
@@ -1411,6 +1414,11 @@ body[data-current-theme=dark] .header__inner {
   left: 86rem;
 }
 
+.place__item--nine {
+  bottom: 18rem;
+  left: -18rem;
+}
+
 .place__dot {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1513,6 +1521,47 @@ body[data-current-theme=dark] .header__inner {
   letter-spacing: -.02rem;
 }
 
+.place__item-box p a {
+  color: #171717;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #171717;
+          text-decoration-color: #171717;
+  -webkit-transition: linear .2s;
+  -o-transition: linear .2s;
+  transition: linear .2s;
+}
+
+.place__item-box p a:hover {
+  -webkit-text-decoration-color: transparent;
+          text-decoration-color: transparent;
+}
+
+.place__item-box > a {
+  position: relative;
+  color: #171717;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -.02rem;
+}
+
+.place__item-box > a::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  width: 0%;
+  height: 0.2rem;
+  background-color: #171717;
+  -webkit-transition: linear .2s;
+  -o-transition: linear .2s;
+  transition: linear .2s;
+}
+
+.place__item-box > a:hover::after {
+  width: 100%;
+}
+
 .place__item-top {
   margin: 0 0 2.5rem 0;
   display: -webkit-box;
@@ -1536,33 +1585,47 @@ body[data-current-theme=dark] .header__inner {
   text-transform: uppercase;
 }
 
-.place__item-top span {
-  color: #9b9b9b;
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -.02rem;
+.place__item-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-transition: linear .2s;
+  -o-transition: linear .2s;
+  transition: linear .2s;
+  background-color: #d4d4d4;
+  border: none;
+  cursor: pointer;
 }
 
-.place__item-close {
-  color: #171717;
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -.02rem;
-  cursor: pointer;
-  border: none;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #171717;
-          text-decoration-color: #171717;
+.place__item-close:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../images/dest/icons/close.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   -webkit-transition: linear .2s;
   -o-transition: linear .2s;
   transition: linear .2s;
 }
 
 .place__item-close:hover {
-  -webkit-text-decoration-color: transparent;
-          text-decoration-color: transparent;
+  opacity: .8;
+}
+
+.place__item-close:hover:after {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+      -ms-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
 }
 
 /*end place===========*/
@@ -2071,14 +2134,8 @@ body[data-current-theme=dark] .header__inner {
   .intro h6 {
     font-size: 1.8rem;
   }
-  .intro__inner {
-    min-height: 70rem;
-  }
   .header__inner {
     height: 4.5rem;
-  }
-  .intro__inner {
-    padding: 29rem 0 1rem;
   }
   .intro__bottom p {
     font-size: 1.4rem;
@@ -2348,9 +2405,6 @@ body[data-current-theme=dark] .header__inner {
   .place__item-top h6 {
     font-size: 2.6rem;
   }
-  .place__item-top span {
-    font-size: 1.6rem;
-  }
   .place__item-top {
     margin: 0 0 2rem 0;
   }
@@ -2432,6 +2486,10 @@ body[data-current-theme=dark] .header__inner {
   .place__item--eight {
     bottom: 192px;
     left: 723px;
+  }
+  .place__item--nine {
+    bottom: 125px;
+    left: -18px;
   }
 }
 
