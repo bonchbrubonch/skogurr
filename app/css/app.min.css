@@ -2478,6 +2478,9 @@ body[data-current-theme=dark] .header__inner {
     max-width: 35rem;
     z-index: -1;
   }
+  .place__dot--nine.active + .place__item-box {
+    z-index: 99999;
+  }
   .place__item-box::after {
     display: none;
   }
