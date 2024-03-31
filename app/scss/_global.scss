@@ -183,3 +183,23 @@ body[data-current-theme=dark] {
     }
   }
 }
+
+.element-animation{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: linear .7s;
+}
+
+.element-animation.element-show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.aboutt__list{
+  .element-animation:nth-child(even){
+    transition-delay: .5s;
+  }
+  .element-animation:nth-child(odd){
+    transition-delay: .25s;
+  }
+}

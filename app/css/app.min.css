@@ -553,6 +553,35 @@ body[data-current-theme=dark] .header__inner {
   height: 100%;
 }
 
+.element-animation {
+  opacity: 0;
+  -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+          transform: translateY(30px);
+  -webkit-transition: linear .7s;
+  -o-transition: linear .7s;
+  transition: linear .7s;
+}
+
+.element-animation.element-show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.aboutt__list .element-animation:nth-child(even) {
+  -webkit-transition-delay: .5s;
+       -o-transition-delay: .5s;
+          transition-delay: .5s;
+}
+
+.aboutt__list .element-animation:nth-child(odd) {
+  -webkit-transition-delay: .25s;
+       -o-transition-delay: .25s;
+          transition-delay: .25s;
+}
+
 @font-face {
   font-family: 'WorkSans';
   src: local("WorkSans-Regular"), local("WorkSans-Regular"), url("../fonts/WorkSans-Regular.woff2") format("woff2"), url("../fonts/WorkSans-Regular.woff") format("woff");
