@@ -27,10 +27,10 @@ $(function () {
 
   if ($(window).width() <= 1200) {
     $(".place__dot-btn").on("click", function () {
-      // $("body").addClass("lock");
+      $("body").addClass("lock");
     });
     $(".place__item-close").on("click", function () {
-      // $("body").removeClass("lock");
+      $("body").removeClass("lock");
     });
   }
 

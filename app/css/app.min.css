@@ -1141,14 +1141,6 @@ body[data-current-theme=dark] .header__inner {
      object-fit: contain;
 }
 
-.intro h6 {
-  color: #f3f3f3;
-  font-size: 2.9rem;
-  font-weight: 500;
-  line-height: 100%;
-  text-align: center;
-}
-
 .intro__bottom {
   position: absolute;
   bottom: 2.5rem;
@@ -2160,9 +2152,6 @@ body[data-current-theme=dark] .header__inner {
     max-width: 30rem;
     margin: 0 0 1rem 0;
   }
-  .intro h6 {
-    font-size: 1.8rem;
-  }
   .header__inner {
     height: 4.5rem;
   }
@@ -2478,7 +2467,7 @@ body[data-current-theme=dark] .header__inner {
     max-width: 35rem;
     z-index: -1;
   }
-  .place__dot--nine.active + .place__item-box {
+  .place__dot.active + .place__item-box {
     z-index: 99999;
   }
   .place__item-box::after {

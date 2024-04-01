@@ -18,10 +18,6 @@
     margin: 0 0 1rem 0;
   }
 
-  .intro h6 {
-    font-size: 1.8rem;
-  }
-
   .header__inner {
     height: 4.5rem;
   }
@@ -403,9 +399,13 @@
     max-width: 35rem;
     z-index: -1;
   }
-  .place__dot--nine.active +.place__item-box{
+
+
+
+  .place__dot.active+.place__item-box {
     z-index: 99999;
   }
+
   .place__item-box::after {
     display: none;
   }
@@ -453,6 +453,7 @@
     bottom: 192px;
     left: 723px;
   }
+
   .place__item--nine {
     bottom: 125px;
     left: -18px;
