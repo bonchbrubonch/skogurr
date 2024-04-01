@@ -865,8 +865,8 @@ body[data-current-theme=dark] .header__inner {
   max-width: 90rem;
   width: 100%;
   margin: 0 0 0 -10px;
-  min-height: 100vh;
   font-size: 0;
+  height: 100vh;
 }
 
 .menu__left img {
@@ -888,6 +888,7 @@ body[data-current-theme=dark] .header__inner {
   padding: 3rem 3rem 2rem 5rem;
   max-width: 1020px;
   width: 100%;
+  height: 100vh;
 }
 
 .menu__top {
@@ -2350,6 +2351,8 @@ body[data-current-theme=dark] .header__inner {
   }
   .menu__left {
     max-width: 30rem;
+    min-height: 100vh;
+    height: auto;
   }
   .menu__logo {
     width: 8.5rem;
@@ -2376,7 +2379,7 @@ body[data-current-theme=dark] .header__inner {
   }
   .menu__right {
     padding: 1rem;
-    height: 70rem;
+    height: auto;
   }
   .menu__bottom > ul a {
     font-size: 1.6rem;
@@ -2401,7 +2404,6 @@ body[data-current-theme=dark] .header__inner {
   }
   .menu__bottom-box {
     padding: 2rem 0 0 0;
-    margin: auto 0 0 0;
     max-width: 100%;
     border-top: 1px solid #e1e1e1;
     -webkit-box-align: center;
