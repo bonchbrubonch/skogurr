@@ -1,35 +1,67 @@
-$(function () {
-    $(".accordeon dd")
-      .hide()
-      .prev()
-      .click(function () {
-        $(this).parents(".accordeon").find("dd").not(this).slideUp().prev().removeClass("active"), $(this).next().not(":visible").slideDown().prev().addClass("active"), $("dl").removeClass("open"), $(this).parent().toggleClass("open");
-      }),
-      $(".header__btn").on("click", function () {
-        $(".menu").addClass("active"), $("body").addClass("lock");
-      }),
-      $(".menu__close").on("click", function () {
-        $(".menu").removeClass("active"), $("body").removeClass("lock");
-      }),
-      $(".place__dot-btn").on("click", function () {
-        $(".place__dot").removeClass("active"), $(this).parent().addClass("active");
-      }),
-      $(".place__item-close").on("click", function () {
-        $(".place__dot").removeClass("active");
-      }),
-      $(window).width() <= 1200 &&
-      ($(".place__dot-btn").on("click", function () {
-          $("body").addClass("lock");
-        }),
-        $(".place__item-close").on("click", function () {
-          $("body").removeClass("lock");
-        }));
-  }),
-  window.addEventListener("scroll", function () {
+$((function () {
+    $(".accordeon dd").hide().prev().click((function () {
+        $(this).parents(".accordeon").find("dd").not(this).slideUp().prev().removeClass("active"), $(this).next().not(":visible").slideDown().prev().addClass("active"), $("dl").removeClass("open"), $(this).parent().toggleClass("open")
+      })), $(".header__btn").on("click", (function () {
+        $(".menu").addClass("active"), $("body").addClass("lock")
+      })), $(".menu__close").on("click", (function () {
+        $(".menu").removeClass("active"), $("body").removeClass("lock")
+      })), $(".place__dot-btn").on("click", (function () {
+        $(".place__dot").removeClass("active"), $(this).parent().addClass("active")
+      })), $(".place__item-close").on("click", (function () {
+        $(".place__dot").removeClass("active")
+      })), $(window).width() <= 1200 && ($(".place__dot-btn").on("click", (function () {
+        $("body").addClass("lock")
+      })), $(".place__item-close").on("click", (function () {
+        $("body").removeClass("lock")
+      }))),
+
+
+      // Клік за межами блоку place__item-box
+      $('body').on('click', function (event) {
+        if (!$(event.target).closest('.place__item-box').length) {
+          $('.place__dot').removeClass('active');
+          $('body').removeClass('lock');
+        }
+      });
+
+    // Клік на блок place__dot-btn
+    $('.place__dot-btn').on('click', function (event) {
+      event.stopPropagation(); // Зупиняємо подальше поширення події
+      $('.place__dot').removeClass('active'); // Прибираємо клас active у всіх блоків place__dot
+      $(this).closest('.place__dot').addClass('active'); // Додаємо клас active батькові блоку place__dot-btn
+      // $('body').addClass('lock');
+    });
+
+    $(".video__inner").on("click", function () {
+      $(this).addClass("play");
+    });
+
+    $(".video__inner").click(function () {
+      var videoBg = $(this).find(".video__bg")[0];
+      if (videoBg && videoBg.tagName === "VIDEO") {
+        videoBg.play();
+      }
+    });
+
+    $('.infrastructure__inner').each(function () {
+      let ths = $(this);
+      ths.find('.infrastructure__item').not(':first').hide();
+      ths.find('.infrastructure__tab').click(function () {
+        ths.find('.infrastructure__tab').removeClass('active').eq($(this).index()).addClass('active');
+        ths.find('.infrastructure__item').hide().eq($(this).index()).fadeIn()
+      }).eq(0).addClass('active');
+    });
+
+
+  })),
+
+
+
+  window.addEventListener("scroll", (function () {
     var e = document.querySelector("header"),
       n = e.offsetTop;
-    (window.scrollY || window.pageYOffset) > n + 100 ? e.classList.add("sticky") : e.classList.remove("sticky");
-  });
+    (window.scrollY || window.pageYOffset) > n + 100 ? e.classList.add("sticky") : e.classList.remove("sticky")
+  }));
 var swiper = new Swiper(".about__swiper", {
   slidesPerView: 1.6,
   spaceBetween: 15,
@@ -60,101 +92,40 @@ swiper = new Swiper(".events__swiper", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
-  },
-});
-// window.addEventListener("scroll", function () {
-//   var e = document.querySelectorAll('[data-theme="dark"]'),
-//     n = window.scrollY;
-//   e.forEach(function (e) {
-//     var t = e.getBoundingClientRect().top + window.scrollY,
-//       r = t + e.offsetHeight;
-//     n >= t - 200 && n <= r ? document.body.setAttribute("data-current-theme", "dark") : document.body.removeAttribute("data-current-theme");
-//   });
-// });
-// var number1 = document.querySelector(".num1"),
-//   number1Top = number1.getBoundingClientRect().top,
-//   start = +number1.innerHTML,
-//   end = +number1.dataset.max;
-// window.addEventListener("scroll", function e() {
-//   if (window.pageYOffset > number1Top - window.innerHeight / 1.2) {
-//     this.removeEventListener("scroll", e);
-//     var n = setInterval(function () {
-//       (number1.innerHTML = ++start), start == end && clearInterval(n);
-//     }, 5);
-//   }
-// });
-// var number2 = document.querySelector(".num2"),
-//   number2Top = number2.getBoundingClientRect().top,
-//   start2 = +number2.innerHTML,
-//   end2 = +number2.dataset.max;
-// window.addEventListener("scroll", function e() {
-//   if (window.pageYOffset > number2Top - window.innerHeight / 1.2) {
-//     this.removeEventListener("scroll", e);
-//     var n = setInterval(function () {
-//       (number2.innerHTML = ++start2), start2 == end2 && clearInterval(n);
-//     }, 5);
-//   }
-// });
-// var number3 = document.querySelector(".num3"),
-//   number3Top = number3.getBoundingClientRect().top,
-//   start3 = +number3.innerHTML,
-//   end3 = +number3.dataset.max;
-// window.addEventListener("scroll", function e() {
-//   if (window.pageYOffset > number3Top - window.innerHeight / 1.2) {
-//     this.removeEventListener("scroll", e);
-//     var n = setInterval(function () {
-//       (number3.innerHTML = ++start3), start3 == end3 && clearInterval(n);
-//     }, 5);
-//   }
-// });
-// var number4 = document.querySelector(".num4"),
-//   number4Top = number4.getBoundingClientRect().top,
-//   start4 = +number4.innerHTML,
-//   end4 = +number4.dataset.max;
-
-function onEntry(e) {
-  e.forEach((e) => {
-    e.isIntersecting ? e.target.classList.add("element-show") : e.target.classList.remove("element-show");
-  });
-}
-window.addEventListener("scroll", function e() {
-  if (window.pageYOffset > number4Top - window.innerHeight / 1.2) {
-    this.removeEventListener("scroll", e);
-    var n = setInterval(function () {
-      (number4.innerHTML = ++start4), start4 == end4 && clearInterval(n);
-    }, 5);
   }
 });
-let options = {
-    threshold: [0.5]
-  },
-  observer = new IntersectionObserver(onEntry, options),
-  elements = document.querySelectorAll(".element-animation");
-for (let e of elements) observer.observe(e);
+window.addEventListener("scroll", (function () {
+  var e = document.querySelectorAll('[data-theme="dark"]'),
+    n = window.scrollY;
+  e.forEach((function (e) {
+    var t = e.getBoundingClientRect().top + window.scrollY,
+      r = t + e.offsetHeight;
+    n >= t - 200 && n <= r ? document.body.setAttribute("data-current-theme", "dark") : document.body.removeAttribute("data-current-theme")
+  }))
+}));
 
 
-
-
-$(function () {
-
-  $('body').on('click', function (event) {
-    if (!$(event.target).closest('.place__item-box').length) {
-      $('.place__dot').removeClass('active');
-      $('body').removeClass('lock');
+/*start animation========*/
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('element-show');
     }
   });
+}
 
-  // Клік на блок place__dot-btn
-  $('.place__dot-btn').on('click', function (event) {
-    event.stopPropagation(); // Зупиняємо подальше поширення події
-    $('.place__dot').removeClass('active'); // Прибираємо клас active у всіх блоків place__dot
-    $(this).closest('.place__dot').addClass('active'); // Додаємо клас active батькові блоку place__dot-btn
-    // $('body').addClass('lock');
-  });
-});
+let options = {
+  threshold: [0.5]
+};
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.element-animation');
 
+for (let elm of elements) {
+  observer.observe(elm);
+}
+/*end animation========*/
 
-var swiper = new Swiper(".datte__slider", {
+swiper = new Swiper(".datte__slider", {
   slidesPerView: 1,
   spaceBetween: 15,
   loop: !0,
@@ -171,36 +142,31 @@ var swiper = new Swiper(".datte__slider", {
     prevEl: ".swiper-button-prev"
   },
   breakpoints: {
-
     767: {
-      slidesPerView: 2,
+      slidesPerView: 2
     },
     1200: {
-      slidesPerView: 3,
-    },
+      slidesPerView: 3
+    }
   }
 });
-
-var swiper = new Swiper(".ttime__slider", {
+swiper = new Swiper(".ttime__slider", {
   slidesPerView: 1,
   spaceBetween: 15,
   loop: !0,
-
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
   breakpoints: {
-
     767: {
-      slidesPerView: 1,
+      slidesPerView: 1
     },
     1200: {
-      slidesPerView: 1.4,
-    },
+      slidesPerView: 1.4
+    }
   }
 });
-
 swiper = new Swiper(".gallerry__swiper", {
   slidesPerView: 1,
   centeredSlides: !0,
@@ -217,5 +183,140 @@ swiper = new Swiper(".gallerry__swiper", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
+  }
+});
+
+var swiper = new Swiper(".plan__slider-side", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 3,
+  freeMode: true,
+  watchSlidesProgress: true,
+  direction: "vertical",
+
+});
+var swiper2 = new Swiper(".plan__slider", {
+  loop: true,
+  spaceBetween: 10,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  thumbs: {
+    swiper: swiper,
   },
 });
+
+var swiper = new Swiper(".plan__slider-side2", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 3,
+  freeMode: true,
+  watchSlidesProgress: true,
+  direction: "vertical",
+
+});
+var swiper2 = new Swiper(".plan__slider2", {
+  loop: true,
+  spaceBetween: 10,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+var swiper = new Swiper(".plan__slider-side3", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 3,
+  freeMode: true,
+  watchSlidesProgress: true,
+  direction: "vertical",
+
+});
+var swiper2 = new Swiper(".plan__slider3", {
+  loop: true,
+  spaceBetween: 10,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+
+swiper = new Swiper(".infrastructure__swiper", {
+  slidesPerView: 1,
+  centeredSlides: !0,
+  loop: !0,
+  effect: "fade",
+  autoplay: {
+    delay: 5e3,
+    disableOnInteraction: !1
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
+
+swiper = new Swiper(".project__slider", {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  loop: !0,
+  autoplay: {
+    delay: 5e3,
+    disableOnInteraction: !1
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  breakpoints: {
+    767: {
+      slidesPerView: 2
+    },
+    1200: {
+      slidesPerView: 5
+    }
+  }
+});
+
+window.addEventListener('DOMContentLoaded', function () {
+  var swiper;
+
+  function initSwiper() {
+    if (window.innerWidth < 992 && !swiper) {
+      swiper = new Swiper('.resident__swiper', {
+        loop: true,
+        spaceBetween: 15,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    } else if (window.innerWidth >= 992 && swiper) {
+      swiper.destroy();
+      swiper = undefined;
+    }
+  }
+
+  initSwiper(); // Ініціалізуємо слайдер при завантаженні сторінки
+
+  window.addEventListener('resize', function () {
+    initSwiper(); // Перевіряємо розмір вікна під час зміни розміру
+  });
+});
+
+
+
+
+// var swiper = new Swiper(".resident__swiper", {
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
