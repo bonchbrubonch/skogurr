@@ -3546,7 +3546,7 @@ body[data-current-theme=dark] .header__inner {
 .form__input-wrap input {
   padding: 2.5rem;
   width: 100%;
-  color: #9b9b9b;
+  color: #171717;
   font-size: 2.3rem;
   font-weight: 500;
   line-height: 100%;
@@ -3814,7 +3814,6 @@ body[data-current-theme=dark] .header__inner {
 
 .resident .excellence__list .excellence__list-item {
   width: calc(33.33333% - 1.5rem);
-  min-height: 50rem;
 }
 
 .resident__swiper .swiper-button-prev,
@@ -4966,14 +4965,10 @@ body[data-current-theme=dark] .header__inner {
     height: 4rem;
   }
   .resident .excellence__list .excellence__list-item {
-    min-height: 35rem !important;
+    min-height: 22rem !important;
     height: 100%;
     width: 100% !important;
     margin: 0;
-  }
-  .resident .excellence__list .excellence__list-item .btn {
-    height: 5rem;
-    padding: 1rem 3.5rem;
   }
   .resident__swiper .swiper-button-next {
     right: auto !important;
@@ -5302,9 +5297,9 @@ body[data-current-theme=dark] .header__inner {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .info__top-item {
     width: 100%;

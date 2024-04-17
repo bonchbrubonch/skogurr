@@ -3179,7 +3179,7 @@ body[data-current-theme=dark] .header__inner {
 .form__input-wrap input {
   padding: 2.5rem;
   width: 100%;
-  color: #9b9b9b;
+  color: #171717;
   font-size: 2.3rem;
   font-weight: 500;
   line-height: 100%;
@@ -3427,7 +3427,6 @@ body[data-current-theme=dark] .header__inner {
 
   .excellence__list .excellence__list-item {
     width: calc(33.33333% - 1.5rem);
-    min-height: 50rem;
   }
 
   &__swiper {
@@ -4766,15 +4765,10 @@ body[data-current-theme=dark] .header__inner {
   }
 
   .resident .excellence__list .excellence__list-item {
-    min-height: 35rem !important;
+    min-height: 22rem !important;
     height: 100%;
     width: 100% !important;
     margin: 0;
-
-    .btn {
-      height: 5rem;
-      padding: 1rem 3.5rem;
-    }
   }
 
   .resident__swiper .swiper-button-next {
@@ -5161,7 +5155,7 @@ body[data-current-theme=dark] .header__inner {
 
   .info__top {
     flex-wrap: wrap;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .info__top-item {

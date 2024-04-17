@@ -65,7 +65,7 @@ $((function () {
     (window.scrollY || window.pageYOffset) > n + 100 ? e.classList.add("sticky") : e.classList.remove("sticky")
   }));
 var swiper = new Swiper(".about__swiper", {
-  slidesPerView: 1.6,
+  slidesPerView: 1.3,
   spaceBetween: 15,
   centeredSlides: !0,
   loop: !0,
