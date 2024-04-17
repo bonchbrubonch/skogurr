@@ -32,16 +32,18 @@ $((function () {
       // $('body').addClass('lock');
     });
 
+    /*start play video===========*/
     $(".video__inner").on("click", function () {
       $(this).addClass("play");
     });
 
     $(".video__inner").click(function () {
-      var videoBg = $(this).find(".video__bg")[0];
-      if (videoBg && videoBg.tagName === "VIDEO") {
-        videoBg.play();
-      }
+      var videoIframe = $(this).find(".video__bg");
+      var videoSrc = videoIframe.attr("src");
+      videoIframe.attr("src", videoSrc + "?autoplay=1");
     });
+
+    /*end play video===========*/
 
     $('.infrastructure__inner').each(function () {
       let ths = $(this);
@@ -205,6 +207,10 @@ var swiper2 = new Swiper(".plan__slider", {
   thumbs: {
     swiper: swiper,
   },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
 });
 
 var swiper = new Swiper(".plan__slider-side2", {
@@ -226,6 +232,10 @@ var swiper2 = new Swiper(".plan__slider2", {
   thumbs: {
     swiper: swiper,
   },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
 });
 var swiper = new Swiper(".plan__slider-side3", {
   loop: true,
@@ -245,6 +255,10 @@ var swiper2 = new Swiper(".plan__slider3", {
   },
   thumbs: {
     swiper: swiper,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   },
 });
 

@@ -347,7 +347,7 @@ template {
    ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 2. Prevent adjustments of font size after orientation changes in iOS..
  */
 html {
   line-height: 1.15;
@@ -3817,6 +3817,11 @@ body[data-current-theme=dark] .header__inner {
   min-height: 50rem;
 }
 
+.resident__swiper .swiper-button-prev,
+.resident__swiper .swiper-button-next {
+  display: none;
+}
+
 /*end resident============*/
 /*start plan============*/
 .plan {
@@ -3862,6 +3867,7 @@ body[data-current-theme=dark] .header__inner {
 .plan__slider, .plan__slider2, .plan__slider3 {
   width: 80%;
   background-color: #fff;
+  position: relative;
 }
 
 .plan__slider .swiper-slide img, .plan__slider2 .swiper-slide img, .plan__slider3 .swiper-slide img {
@@ -3869,6 +3875,13 @@ body[data-current-theme=dark] .header__inner {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.plan__slider .swiper-button-next,
+.plan__slider .swiper-button-prev, .plan__slider2 .swiper-button-next,
+.plan__slider2 .swiper-button-prev, .plan__slider3 .swiper-button-next,
+.plan__slider3 .swiper-button-prev {
+  opacity: .5;
 }
 
 .plan__slider-side, .plan__slider-side2, .plan__slider-side3 {

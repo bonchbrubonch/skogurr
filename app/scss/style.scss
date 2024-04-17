@@ -3,7 +3,7 @@
    ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 2. Prevent adjustments of font size after orientation changes in iOS..
  */
 html {
   line-height: 1.15;
@@ -3429,6 +3429,14 @@ body[data-current-theme=dark] .header__inner {
     width: calc(33.33333% - 1.5rem);
     min-height: 50rem;
   }
+
+  &__swiper {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
 }
 
 /*end resident============*/
@@ -3472,6 +3480,7 @@ body[data-current-theme=dark] .header__inner {
   &__slider3 {
     width: 80%;
     background-color: #fff;
+    position: relative;
 
     .swiper-slide {
       img {
@@ -3479,6 +3488,10 @@ body[data-current-theme=dark] .header__inner {
         height: 100%;
         object-fit: cover;
       }
+    }
+    .swiper-button-next,
+    .swiper-button-prev{
+      opacity: .5;
     }
   }
 
